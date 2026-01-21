@@ -1,10 +1,10 @@
 export const siteConfig = {
-  name: "MDX Starter",
-  url: "https://mdx-minimal.vercel.app",
-  description: "MDX and Next.js Starter made by Bridger Tower at 9d8 and WIP / AC",
-  author: "Bridger Tower",
+  name: "Gestalt Labs",
+  url: "https://gestaltlabs.io",
+  description: "Studying how humans and AI work together. Building software that reflects what's learned.",
+  author: "Gestalt Labs",
   links: {
-    twitter: "https://twitter.com/bridgertower",
-    github: "https://github.com/brijr/mdx-minimal",
+    twitter: "https://twitter.com/gestaltlabs",
+    github: "https://github.com/gestaltlabs",
   },
 };
