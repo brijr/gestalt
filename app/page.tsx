@@ -18,9 +18,9 @@ const Hero = () => {
   return (
     <Section>
       <Container className="space-y-2">
-        <h1>brijr/web-starter</h1>
+        <h1>Gestalt Labs</h1>
         <p className="text-muted-foreground">
-          A minimal typescript website starter with next.js, velite, tailwind, and shadcn/ui.{" "}
+          Studying how humans and AI work together. Building software that reflects what's learned.
         </p>
       </Container>
     </Section>
