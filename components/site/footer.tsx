@@ -8,7 +8,7 @@ export const Footer = () => {
         <Container className="flex items-center justify-between text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <Logo width={16} />
-            <p>&copy; {new Date().getFullYear()} brijr/mdx</p>
+            <p>&copy; {new Date().getFullYear()} Gestalt Labs</p>
           </div>
         </Container>
       </Section>
