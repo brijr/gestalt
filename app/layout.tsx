@@ -3,6 +3,8 @@ import { Layout, Main } from "@/components/ds";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Toaster } from "@/components/ui/sonner";
 import { Footer } from "@/components/site/footer";
+import { Inter_Tight } from "next/font/google";
+
 import { siteConfig } from "@/lib/site";
 
 import type { Metadata } from "next";
@@ -11,6 +13,12 @@ import "./globals.css";
 import "./hljs.css";
 
 import { cn } from "@/lib/utils";
+
+const sans = Inter_Tight({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -54,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Layout>
+    <Layout className={sans.variable}>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased w-screen flex flex-col",

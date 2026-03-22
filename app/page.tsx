@@ -20,8 +20,7 @@ const Hero = () => {
       <Container className="space-y-2">
         <h1>Gestalt Labs</h1>
         <p className="text-muted-foreground">
-          Studying how humans and AI work together. Building software that
-          reflects what&apos;s learned.
+          Applying design and AI to build systems that drive business outcomes.
         </p>
         <p className="text-sm text-muted-foreground">
           by{" "}
