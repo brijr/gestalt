@@ -1,6 +1,5 @@
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Layout, Main } from "@/components/ds";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Toaster } from "@/components/ui/sonner";
 import { Footer } from "@/components/site/footer";
 import { Inter_Tight } from "next/font/google";
@@ -78,9 +77,6 @@ export default function RootLayout({
           >
             <Main className="flex-1">{children}</Main>
             <Footer />
-            <div className="fixed bottom-6 right-6">
-              <ThemeToggle />
-            </div>
             <Toaster position="top-center" />
           </ThemeProvider>
         </body>
