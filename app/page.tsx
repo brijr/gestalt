@@ -17,12 +17,12 @@ export default function HomePage() {
 const Hero = () => {
   return (
     <Section>
-      <Container className="space-y-4 text-4xl bg-muted rounded-xl p-8">
+      <Container className="space-y-4 text-4xl bg-foreground text-background rounded-3xl p-8">
         <h1 className="font-medium">Gestalt Labs</h1>
-        <p className="text-muted-foreground">
+        <p>
           Applying design and AI to build systems that drive business outcomes.
         </p>
-        <p className="text-sm text-muted-foreground mt-12">
+        <p className="text-base  mt-12">
           by{" "}
           <a
             href="https://bridger.to"

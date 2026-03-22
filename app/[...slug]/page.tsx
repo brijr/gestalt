@@ -1,6 +1,8 @@
 import { Main, Section, Container, Prose } from "@/components/ds";
 import { MDXContent } from "@/components/markdown/mdx-content";
 import { Meta } from "@/components/markdown/meta";
+import { ReferenceIndex, RefLink } from "@/components/markdown/ref";
+import { getReferenceUrlsForSlug } from "@/lib/post-reference-urls";
 import { siteConfig } from "@/lib/site";
 
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
@@ -67,6 +69,8 @@ export default async function Page(props: PageProps) {
     notFound();
   }
 
+  const referenceUrls = getReferenceUrlsForSlug(slug);
+
   return (
     <Main>
       <Meta
@@ -80,7 +84,17 @@ export default async function Page(props: PageProps) {
       <Section>
         <Container>
           <Prose>
-            <MDXContent code={post.body} />
+            <MDXContent
+              code={post.body}
+              components={{
+                Ref: (props: { n: number }) => (
+                  <RefLink n={props.n} href={referenceUrls[props.n - 1]} />
+                ),
+                ReferenceIndex: () => (
+                  <ReferenceIndex urls={referenceUrls} />
+                ),
+              }}
+            />
           </Prose>
         </Container>
       </Section>

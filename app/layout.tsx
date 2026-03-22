@@ -66,7 +66,7 @@ export default function RootLayout({
       <Layout className={sans.variable}>
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased w-screen flex flex-col",
+            "min-h-screen bg-background font-sans antialiased w-screen flex flex-col text-lg",
           )}
         >
           <ThemeProvider
