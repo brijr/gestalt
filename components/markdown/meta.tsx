@@ -34,7 +34,9 @@ export function Meta({ title, description, date, author, slug }: MetaProps) {
         </div>
       </div>
       {description && (
-        <p className="text-muted-foreground text-xl sm:text-2xl">{description}</p>
+        <p className="text-muted-foreground text-xl sm:text-2xl">
+          {description}
+        </p>
       )}
       {(date || author) && (
         <div className="text-sm text-muted-foreground">

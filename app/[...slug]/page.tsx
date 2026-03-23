@@ -73,14 +73,26 @@ export default async function Page(props: PageProps) {
 
   return (
     <Main>
-      <Meta
-        title={post.title}
-        description={post.description}
-        date={post.date}
-        author={post.author}
-        tags={post.tags}
-        slug={post.slug}
-      />
+      <Section>
+        <Container className="space-y-4 uppercase font-mono bg-foreground text-background rounded-3xl p-8">
+          <h1 className="sr-only">{post.title}</h1>
+          <h2>
+            <span className="inline-flex text-orange-500">●</span> {post.title}
+          </h2>
+          {post.description && (
+            <h3 className="text-muted">{post.description}</h3>
+          )}
+          <div className="text-base mt-12 flex flex-wrap gap-4 items-center">
+            {post.author && <span>by {post.author}</span>}
+            {post.date && (
+              <span>{new Date(post.date).toLocaleDateString()}</span>
+            )}
+            {post.tags && post.tags.length > 0 && (
+              <span className="text-muted">{post.tags.join(", ")}</span>
+            )}
+          </div>
+        </Container>
+      </Section>
       <Section>
         <Container>
           <Prose>
@@ -90,9 +102,7 @@ export default async function Page(props: PageProps) {
                 Ref: (props: { n: number }) => (
                   <RefLink n={props.n} href={referenceUrls[props.n - 1]} />
                 ),
-                ReferenceIndex: () => (
-                  <ReferenceIndex urls={referenceUrls} />
-                ),
+                ReferenceIndex: () => <ReferenceIndex urls={referenceUrls} />,
               }}
             />
           </Prose>
