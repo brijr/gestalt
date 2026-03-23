@@ -1,15 +1,16 @@
 import { Main, Section, Container, Prose } from "@/components/ds";
-import { MDXContent } from "@/components/markdown/mdx-content";
-import { Meta } from "@/components/markdown/meta";
 import { ReferenceIndex, RefLink } from "@/components/markdown/ref";
-import { getReferenceUrlsForSlug } from "@/lib/post-reference-urls";
-import { siteConfig } from "@/lib/site";
+import { MDXContent } from "@/components/markdown/mdx-content";
 
+import { getReferenceUrlsForSlug } from "@/lib/post-reference-urls";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { siteConfig } from "@/lib/site";
 import { notFound } from "next/navigation";
 
 import type { Metadata } from "next";
 import type { Post } from ".velite";
+
+import Link from "next/link";
 
 interface PageProps {
   params: Promise<{
@@ -80,7 +81,7 @@ export default async function Page(props: PageProps) {
             <span className="inline-flex text-orange-500">●</span> {post.title}
           </h2>
           {post.description && (
-            <h3 className="text-muted">{post.description}</h3>
+            <h3 className="text-zinc-500">{post.description}</h3>
           )}
           <div className="text-base mt-12 flex flex-wrap gap-4 items-center">
             {post.author && <span>by {post.author}</span>}
@@ -88,11 +89,15 @@ export default async function Page(props: PageProps) {
               <span>{new Date(post.date).toLocaleDateString()}</span>
             )}
             {post.tags && post.tags.length > 0 && (
-              <span className="text-muted">{post.tags.join(", ")}</span>
+              <span className="text-zinc-500">{post.tags.join(", ")}</span>
             )}
+            <Link className="ml-auto" href="/">
+              &larr; Back
+            </Link>
           </div>
         </Container>
       </Section>
+
       <Section>
         <Container>
           <Prose>

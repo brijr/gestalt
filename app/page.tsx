@@ -23,7 +23,7 @@ const Hero = () => {
           Welcome to <span className="inline-flex  text-orange-500">●</span>{" "}
           Gestalt Labs
         </h2>
-        <h3 className="text-muted">
+        <h3 className="text-zinc-500">
           Applying design and AI to build systems that drive business outcomes.
         </h3>
         <p className="text-base  mt-12">
